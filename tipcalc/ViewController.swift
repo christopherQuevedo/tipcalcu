@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  tipcalc
 //
-//  Created by Chris Q. on 9/5/18.
+//  Created by Chris Q. on 9/5/18
 //  Copyright © 2018 Chris Q. All rights reserved.
 //
 
