@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOg-hG-HXI">
-                                <rect key="frame" x="163" y="304" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-jW-ZVu">
                                 <rect key="frame" x="43" y="191" width="24" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,11 +40,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-Jz-2aj">
-                                <rect key="frame" x="43" y="245" width="285" height="21"/>
+                                <rect key="frame" x="16" y="245" width="343" height="14"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-Xr-W83">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-Xr-W83">
                                 <rect key="frame" x="181" y="105" width="147" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -73,8 +66,15 @@
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="jS4-2u-aZo"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMh-bc-U9o">
-                                <rect key="frame" x="165" y="190" width="75" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMh-bc-U9o">
+                                <rect key="frame" x="181" y="191" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOg-hG-HXI">
+                                <rect key="frame" x="181" y="305" width="147" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -88,7 +88,13 @@
                             <outletCollection property="gestureRecognizers" destination="fUS-VE-97r" appends="YES" id="qRq-8s-w2b"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="TipCalculator" id="9j3-SU-QwH"/>
+                    <navigationItem key="navigationItem" title="TipCalculator" id="9j3-SU-QwH">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="wmI-Uo-PCp">
+                            <connections>
+                                <segue destination="cnf-wb-gyf" kind="push" id="n5P-II-YOW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="7Ie-Xr-W83" id="Xe6-LB-cbB"/>
                         <outlet property="tipControl" destination="Vhk-8P-ynr" id="uCa-Lz-WfU"/>
@@ -104,6 +110,31 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="860" y="124.58770614692655"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="aNY-WQ-yfI">
+            <objects>
+                <viewController id="cnf-wb-gyf" customClass="SettingsViewController" customModule="tipcalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LGQ-9f-RSy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="tGE-3S-ewe"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wfF-qS-pYl" appends="YES" id="Umd-FD-PeU"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="d0u-Rp-lsI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pws-8c-A7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wfF-qS-pYl">
+                    <connections>
+                        <action selector="onTap:" destination="cnf-wb-gyf" id="aV2-Se-nh8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1561" y="166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RWk-dH-UGl">
